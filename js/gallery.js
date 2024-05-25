@@ -64,7 +64,7 @@ const images = [
 },
 ];
 
-const galleryList = document.querySelector('ul.gallery');
+const gallery = document.querySelector('ul.gallery');
 
 const galleryList = images
     .map(image =>
