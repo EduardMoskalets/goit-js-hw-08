@@ -64,7 +64,7 @@ const images = [
 },
 ];
 
-const gallery = document.querySelector('ul.gallery');
+const gallery = document.querySelector('.gallery');
 
 const galleryList = images
     .map(image =>
@@ -76,6 +76,9 @@ const galleryList = images
     )
     .join("");
 
+
+
 gallery.insertAdjacentHTML("beforeend", galleryList);
 
-gallery.addEventListner("click", handleModalOpen);
+gallery.addEventListner("click", openModal);
+
