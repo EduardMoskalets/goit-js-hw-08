@@ -82,3 +82,32 @@ gallery.insertAdjacentHTML("beforeend", galleryList);
 
 gallery.addEventListner("click", openModal);
 
+function openModal(event) {
+    if (event.target.nodeName === 'IMG') {
+       event.preventDefault();
+        const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" alt="${event.target.alt}"/>
+`);
+
+instance.show()
+   }
+}
+
+const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600>`,
+    {
+        onShow: (instance) => {
+            document.addEventListener('keydown', onEscKeyPress);
+        },
+        onClose: (instance) => {
+            document.removeEventListener('keydown', onEscKeyPress);
+        }
+    }
+);
+
+
+function onEscKeyPress(even) {
+    if (even.key === 'Escape') {
+        instance.close();
+    }
+}
