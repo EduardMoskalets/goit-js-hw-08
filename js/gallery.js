@@ -89,7 +89,7 @@ function openModal(event) {
     <img src="${event.target.dataset.source}" alt="${event.target.alt}"/>
 `);
 
-instance.show()
+    instance.show();
    }
 }
 
