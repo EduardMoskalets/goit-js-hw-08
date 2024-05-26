@@ -80,11 +80,12 @@ const galleryList = images
 
 gallery.insertAdjacentHTML("beforeend", galleryList);
 
-gallery.addEventListner("click", openModal);
+gallery.addEventListener("click", openModal);
 
 function openModal(event) {
     if (event.target.nodeName === 'IMG') {
-       event.preventDefault();
+        event.preventDefault();
+        
         const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" alt="${event.target.alt}"/>
 `);
@@ -106,8 +107,10 @@ const instance = basicLightbox.create(`
 );
 
 
-function onEscKeyPress(even) {
-    if (even.key === 'Escape') {
+function onEscKeyPress(e) {
+    if (e.key === 'Escape') {
         instance.close();
     }
 }
+
+// ==============================================================================================================
