@@ -97,8 +97,14 @@ function openModal(event) {
             }
         });
 
-    instance.show();
-   }
+        instance.show();
+        
+        function onEscKeyPress(e) {
+        if (e.key === 'Escape') {
+        instance.close();
+        }
+}
+    }
 }
 
 // const instance = basicLightbox.create(`
@@ -114,10 +120,10 @@ function openModal(event) {
 // );
 
 
-function onEscKeyPress(e) {
-    if (e.key === 'Escape') {
-        instance.close();
-    }
-}
+// function onEscKeyPress(e) {
+//     if (e.key === 'Escape') {
+//         instance.close();
+//     }
+// }
 
 // ==============================================================================================================
