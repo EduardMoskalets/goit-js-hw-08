@@ -102,8 +102,8 @@ function openModal(event) {
         function onEscKeyPress(e) {
         if (e.key === 'Escape') {
         instance.close();
+            }
         }
-}
     }
 }
 
