@@ -88,23 +88,30 @@ function openModal(event) {
         
         const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" alt="${event.target.alt}"/>
-`);
+`, {
+            onShow: (instance) => {
+                document.addEventListener('keydown', onEscKeyPress);
+            },
+            onClose: (instance) => {
+                document.removeEventListener('keydown', onEscKeyPress);
+            }
+        });
 
     instance.show();
    }
 }
 
-const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600>`,
-    {
-        onShow: (instance) => {
-            document.addEventListener('keydown', onEscKeyPress);
-        },
-        onClose: (instance) => {
-            document.removeEventListener('keydown', onEscKeyPress);
-        }
-    }
-);
+// const instance = basicLightbox.create(`
+//     <img src="${event.target.dataset.source}" width="800" height="600>`,
+//     {
+//         onShow: (instance) => {
+//             document.addEventListener('keydown', onEscKeyPress);
+//         },
+//         onClose: (instance) => {
+//             document.removeEventListener('keydown', onEscKeyPress);
+//         }
+//     }
+// );
 
 
 function onEscKeyPress(e) {
